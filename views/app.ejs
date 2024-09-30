@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+        /* The popup background overlay */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(32, 33, 32, 0.8); /* Black background with transparency */
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* The popup content */
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            position: relative;
+        }
+
+        /* Close button */
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-zinc-900 ">
+   
+
+    <div>
+    
+        <% if (error_msg.length > 0) { %>
+            <div id="error-message">
+                <h1 class="text-red-600 text-4xl text-center"><%= error_msg %></h1>
+            </div>
+        <% } %>
+        <h1 class="text-center text-4xl m-4 text-zinc-100">Social Media</h1>
+        <p id="currentTime" class="text-sm text-center text-zinc-400"></p>
+        <br><hr><br>
+        <body class=" text-center bg-zinc-900">
+            <body class="bg-zinc-900 text-white">
+                <div class="my-2 mx-3 flex justify-center">
+                    <button class="bg-green-600 hover:bg-green-400 text-white font-bold p-1 px-3 rounded mt-5" onclick="openPopup()">New User</button>
+                </div>
+            
+                <!-- Popup Form -->
+                <div class="popup-overlay" id="popup">
+                    <div class="popup-content">
+                    <span class="close-popup" onclick="closePopup()">&times;</span>
+                    <h2 class="text-2xl text-black mb-4">Register here</h2>
+                    <form action="/create" method="POST">
+                    <label for="name" class="text-black">Name</label>
+                    <input class="border rounded-lg w-full p-2 mb-4" type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+                    <label for="email" class="text-black">Email</label>
+                    <input class="border rounded-lg w-full p-2 mb-4" type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+                    <label for="password" class="text-black">Password</label>
+                    <input class="border rounded-lg w-full p-2 mb-4" type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+                    <button class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded" type="submit">Submit</button>
+                    <div class="my-3">
+                    <a  href="/" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded"> Already have a account</a>
+                    </div>
+                    </form>
+                </div>
+                </div>
+    <div class="justify-center flex  ">
+        <form  class="w-min bg-zinc-600 rounded-lg p-3" action="/login" method="post"> 
+            <label class="text-zinc-100 mx-1 text-xl">Email</label>
+            <input class="m-1 my-2 px-3 p-1 rounded-lg min-w-72" type="email" name="email" placeholder="Enter Email" required>
+            <label class="text-zinc-100 mx-1 text-xl">Password</label>
+            <input class="m-1 my-2 px-3 p-1 rounded-lg min-w-72" type="Password" name="password" placeholder="Enter Password" required>
+            <button class="m-1 my-2 px-3 p-1 rounded-lg bg-blue-500 hover:bg-blue-400" type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+
+    <script>
+        // Hide success message after 3 seconds
+       
+
+        function showTime() {
+            document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+        }
+        showTime();
+        setInterval(function () {
+            showTime();
+        }, 1000);
+
+        // Hide error message after 3 seconds
+        setTimeout(() => {
+            const errorMessage = document.getElementById('error-message');
+            if (errorMessage) {
+                errorMessage.style.display = 'none';
+            }
+        }, 2000);
+
+        function openPopup() {
+            document.getElementById("popup").style.display = "flex";
+        }
+
+        
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+
+    
+</body>
+</html>
