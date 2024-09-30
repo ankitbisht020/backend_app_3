@@ -1,4 +1,4 @@
-###Express.js Backend Application
+Express.js Backend Application
 This is a simple backend application built using Express.js for user authentication (login and registration) with password hashing using bcrypt. The application connects to a MongoDB database to store users and posts. After logging in or registering, users can create, edit, and delete their own posts.
 
 Features
@@ -34,6 +34,7 @@ Protected Endpoints (after login)
 5. DELETE /posts/delete/:id: Deletes a post
 
 File Structure
+\`\`\`
 ├── /config
 │   └── mongoose-connection.js  # MongoDB connection setup
 ├── /controllers
@@ -53,6 +54,7 @@ File Structure
 ├── app.js                      # Main application entry point
 ├── package.json
 └── .env                        # Environment variables
+\`\`\`
 
 
 Usage
