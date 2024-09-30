@@ -34,7 +34,7 @@ Protected Endpoints (after login)
 5. DELETE /posts/delete/:id: Deletes a post
 
 File Structure
-\`\`\`
+
 ├── /config
 │   └── mongoose-connection.js  # MongoDB connection setup
 ├── /controllers
@@ -54,7 +54,6 @@ File Structure
 ├── app.js                      # Main application entry point
 ├── package.json
 └── .env                        # Environment variables
-\`\`\`
 
 
 Usage
