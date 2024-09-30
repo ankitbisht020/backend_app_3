@@ -1,4 +1,4 @@
-Express.js Backend Application
+###Express.js Backend Application
 This is a simple backend application built using Express.js for user authentication (login and registration) with password hashing using bcrypt. The application connects to a MongoDB database to store users and posts. After logging in or registering, users can create, edit, and delete their own posts.
 
 Features
