@@ -23,15 +23,15 @@ This is a simple backend application built using Express.js for user authenticat
 
 # Technologies Used
 
-***~ Backend:*** Node.js with Express.js.
+***. Backend:*** Node.js with Express.js.
 
-***~ Database:*** MongoDB with Mongoose
+***. Database:*** MongoDB with Mongoose
 
-***~ Password Hashing:*** bcrypt
+***. Password Hashing:*** bcrypt
 
-***~ Frontend:*** EJS templating engine
+***. Frontend:*** EJS templating engine
 
-***~ Session Management:*** express-session
+***. Session Management:*** express-session
 
 # Endpoints
 ### Public Endpoints
