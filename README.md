@@ -98,11 +98,12 @@ This is a simple backend application built using Express.js for user authenticat
 
 
 # Usage
-**~ Registration:** Navigate to /register to create a new account. Passwords are hashed using bcrypt before being saved to the MongoDB database.
 
-**~ Login:** Use the /login page to authenticate and gain access to your dashboard.
+***1. Registration:*** Navigate to /register to create a new account. Passwords are hashed using bcrypt before being saved to the MongoDB database.
 
-**~ Post Management:** Once logged in, users can create, edit, and delete posts from their dashboard.
+***2. Login:*** Use the /login page to authenticate and gain access to your dashboard.
+
+***3. Post Management:*** Once logged in, users can create, edit, and delete posts from their dashboard.
 
 # Security
 ***~*** Passwords are hashed using bcrypt for secure storage in the database.
